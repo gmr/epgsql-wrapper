@@ -1,0 +1,12 @@
+diff --git a/src/epgsql.app.src b/src/epgsql.app.src
+index 0678bfb..463dfee 100644
+--- a/src/epgsql.app.src
++++ b/src/epgsql.app.src
+@@ -1,6 +1,6 @@
+ {application, epgsql,
+  [{description, "PostgreSQL Client"},
+-  {vsn, git},
++  {vsn, "1.4.1"},
+   {modules, [pgsql, pgsql_binary, pgsql_connection, pgsql_fdatetime,
+              pgsql_idatetime, pgsql_sock, pgsql_types]},
+   {registered, []},

@@ -4,6 +4,8 @@ UPSTREAM_GIT:=https://github.com/wg/epgsql.git
 UPSTREAM_REVISION:=3318bd5d646cad0623a
 RETAIN_ORIGINAL_VERSION:=true
 
+WRAPPER_PATCHES:=0001-version.patch
+
 # Path include/http.hrl is needed during compilation
 INCLUDE_DIRS+=$(CLONE_DIR)
 
