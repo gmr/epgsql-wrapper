@@ -6,7 +6,6 @@ RETAIN_ORIGINAL_VERSION:=true
 
 WRAPPER_PATCHES:=0001-version.patch
 
-# Path include/http.hrl is needed during compilation
 INCLUDE_DIRS+=$(CLONE_DIR)
 
 ORIGINAL_APP_FILE:=$(CLONE_DIR)/src/$(APP_NAME).app.src
