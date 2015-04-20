@@ -8,6 +8,8 @@ WRAPPER_PATCHES:=0001-version.patch
 
 INCLUDE_DIRS+=$(CLONE_DIR)
 
+STANDALONE_TEST_COMMANDS:=eunit:test([epgsql_wrapper_test],[verbose])
+
 ORIGINAL_APP_FILE:=$(CLONE_DIR)/src/$(APP_NAME).app.src
 DO_NOT_GENERATE_APP_FILE=true
 
