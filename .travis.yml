@@ -2,8 +2,7 @@ language: erlang
 otp_release:
 - 17.4
 env:
-- BUILD_DIR=$HOME/rabbitmq-public-umbrella RABBIT_TAG=v3_5_1
-- BUILD_VERSION=v3.5.x
+- BUILD_DIR=$HOME/rabbitmq-public-umbrella RABBIT_TAG=v3_5_1 BUILD_VERSION=v3.5.x
 before_install:
 - "$TRAVIS_BUILD_DIR/travis-umbrella-setup.sh"
 install:
