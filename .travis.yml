@@ -1,31 +1,31 @@
 sudo: false
 language: erlang
 otp_release:
-- 17.5
+  - 17.5
 addons:
   apt:
     packages:
       - xsltproc
 env:
-- BUILD_DIR=$HOME/rabbitmq-public-umbrella RABBIT_TAG=v3_5_3 BUILD_VERSION=v3.5.x
+  - BUILD_DIR=$HOME/rabbitmq-public-umbrella RABBIT_TAG=v3_5_3 BUILD_VERSION=v3.5.x
 before_install:
-- "$TRAVIS_BUILD_DIR/travis-umbrella-setup.sh"
+  - "$TRAVIS_BUILD_DIR/travis-umbrella-setup.sh"
 script: cd $BUILD_DIR/epgsql-wrapper && make test
 after_script:
-- rm -rf $BUILD_DIR/epgsql-wrapper
+  - rm -rf $BUILD_DIR/epgsql-wrapper
 before_deploy:
-- cd $BUILD_DIR/epgsql-wrapper
-- VERSION=$BUILD_VERSION make
-- mv $BUILD_DIR/epgsql-wrapper/dist/epgsql-wrapper*.ez $BUILD_DIR/epgsql-wrapper/dist/epgsql-wrapper-${TRAVIS_TAG}.ez
+  - cd $BUILD_DIR/epgsql-wrapper
+  - VERSION=$BUILD_VERSION make
+  - mv $BUILD_DIR/epgsql-wrapper/dist/epgsql-*.ez $BUILD_DIR/epgsql-wrapper/dist/epgsql-${TRAVIS_TAG}.ez
 cache:
   apt: true
   directories:
-  - "$BUILD_DIR"
+    - "$BUILD_DIR"
 deploy:
   provider: releases
   api_key:
     secure: AD5omb7JwF4uC2c0fhKEMvK3GIEKSQor8YquuWLQQa568QEyBPVJcNGl6VJMHS+NIiA/uVNQ4wS6lut/CxK2thtXRphOB73Y1dOgv3nkRTRwWswOccrzSpfhsRoxA+EiA2K9nEGHrUznXjDS1ZYM0LiNXZaj8mlfNwgBiczj06Q=
-  file: $BUILD_DIR/epgsql-wrapper/dist/epgsql-wrapper-${TRAVIS_TAG}.ez
+  file: $BUILD_DIR/epgsql-wrapper/dist/epgsql-${TRAVIS_TAG}.ez
   on:
     tags: true
     repo: gmr/epgsql-wrapper
