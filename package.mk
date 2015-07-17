@@ -1,10 +1,8 @@
 APP_NAME:=epgsql
 
-UPSTREAM_GIT:=https://github.com/wg/epgsql.git
-UPSTREAM_REVISION:=3318bd5d646cad0623a
+UPSTREAM_GIT:=https://github.com/epgsql/epgsql.git
+UPSTREAM_REVISION:=3.1.0
 RETAIN_ORIGINAL_VERSION:=true
-
-WRAPPER_PATCHES:=0001-version.patch
 
 INCLUDE_DIRS+=$(CLONE_DIR)
 
