@@ -16,7 +16,7 @@ after_script:
 before_deploy:
 - cd $BUILD_DIR/epgsql-wrapper
 - VERSION=$BUILD_VERSION make
-- mv $BUILD_DIR/epgsql-wrapper/dist/epgsql-wrapper-${TRAVIS_TAG}*.ez $BUILD_DIR/epgsql-wrapper/dist/epgsql-wrapper-${TRAVIS_TAG}.ez
+- mv $BUILD_DIR/epgsql-wrapper/dist/epgsql-wrapper*.ez $BUILD_DIR/epgsql-wrapper/dist/epgsql-wrapper-${TRAVIS_TAG}.ez
 cache:
   apt: true
   directories:
